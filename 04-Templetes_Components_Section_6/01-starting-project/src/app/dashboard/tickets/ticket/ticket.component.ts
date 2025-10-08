@@ -9,12 +9,14 @@ import { Ticket } from './ticket.model';
   styleUrl: './ticket.component.css'
 })
 export class TicketComponent {
+  // @Input({}) ...
   data = input.required<Ticket>();
-  detailsVisible = signal(false);
+  // @Output('closeTicket')
   close = output();
+  detailsVisible = signal(false);
 
   onToggleDetails() {
-    //this.detailsVisible.set(!this.detailsVisible());
+    // this.detailsVisible.set(!this.detailsVisible());
     this.detailsVisible.update((wasVisible) => !wasVisible);
   }
 
